@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: WebView(
-        initialUrl: '',
+        initialUrl: 'https://wwww.pangasherehe.com',
         javascriptMode: JavascriptMode.unrestricted,
       ),
     );
