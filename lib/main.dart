@@ -23,6 +23,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int index = 0;
   void initState() {
     super.initState();
     if (Platform.isAndroid) WebView.platform = AndroidWebView();
@@ -34,6 +35,33 @@ class _MyHomePageState extends State<MyHomePage> {
       body: WebView(
         initialUrl: 'https://wwww.pangasherehe.com',
         javascriptMode: JavascriptMode.unrestricted,
+      ),
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
+            indicatorColor: Colors.redAccent,
+            labelTextStyle: MaterialStateProperty.all(
+              TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 14,
+              ),
+            )),
+        child: NavigationBar(
+          animationDuration: Duration(seconds: 3),
+          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+          selectedIndex: index,
+          onDestinationSelected: (index) => setState(() {
+            this.index = index;
+          }),
+          destinations: [
+            NavigationDestination(
+              icon: Icon(Icons.people),
+              label: 'Accounts',
+            ),
+            NavigationDestination(
+                icon: Icon(Icons.category), label: 'Categories'),
+            NavigationDestination(icon: Icon(Icons.event), label: "Events"),
+          ],
+        ),
       ),
     );
   }
