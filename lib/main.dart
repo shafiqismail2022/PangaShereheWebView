@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }
@@ -23,6 +24,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var screens = [
+    WebView(
+      initialUrl: 'https://pangasherehe.com',
+    ),
+    WebView(
+      initialUrl: 'https://pangasherehe.com/client_area',
+    ),
+    WebView(
+      initialUrl: 'https://pangasherehe.com/get-merchant-category',
+    ),
+    WebView(
+      initialUrl: 'https://pangasherehe.com/live-event-tiketi',
+    ),
+    WebView(
+      initialUrl: 'https://pangasherehe.com/merchants',
+    ),
+  ];
   int index = 0;
   void initState() {
     super.initState();
@@ -32,10 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WebView(
-        initialUrl: 'https://pangasherehe.com',
-        javascriptMode: JavascriptMode.unrestricted,
-      ),
+      body: screens[index],
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
             indicatorColor: Colors.redAccent,
@@ -55,6 +70,10 @@ class _MyHomePageState extends State<MyHomePage> {
             });
           },
           destinations: [
+            NavigationDestination(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
             NavigationDestination(
               icon: Icon(Icons.people),
               label: 'Accounts',
