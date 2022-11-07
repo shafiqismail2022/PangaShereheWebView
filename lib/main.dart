@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: WebView(
-        initialUrl: 'https://wwww.pangasherehe.com',
+        initialUrl: 'https://pangasherehe.com',
         javascriptMode: JavascriptMode.unrestricted,
       ),
       bottomNavigationBar: NavigationBarTheme(
@@ -49,9 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
           animationDuration: Duration(seconds: 3),
           labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           selectedIndex: index,
-          onDestinationSelected: (index) => setState(() {
-            this.index = index;
-          }),
+          onDestinationSelected: (index) {
+            setState(() {
+              this.index = index;
+            });
+          },
           destinations: [
             NavigationDestination(
               icon: Icon(Icons.people),
@@ -60,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
             NavigationDestination(
                 icon: Icon(Icons.category), label: 'Categories'),
             NavigationDestination(icon: Icon(Icons.event), label: "Events"),
+            NavigationDestination(icon: Icon(Icons.sell), label: "Vendors"),
           ],
         ),
       ),
