@@ -41,6 +41,22 @@ class _NavigationbarState extends State<Navigationbar> {
         onDestinationSelected: (index) {
           setState(() {
             this.index = index;
+            if (index == 0) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyHomePage()));
+            } else if (index == 1) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AccountPage()));
+            } else if (index == 2) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CategoriesPage()));
+            } else if (index == 3) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => EventPage()));
+            } else if (index == 4) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => VendorPage()));
+            }
           });
         },
         destinations: [
