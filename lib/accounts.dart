@@ -11,10 +11,11 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: WebView(
-          initialUrl: 'https://pangasherehe.com/client_area',
-          javascriptMode: JavascriptMode.unrestricted,
-        ),
-        bottomNavigationBar: Navigationbar());
+      body: WebView(
+        initialUrl: 'https://pangasherehe.com/client_area',
+        javascriptMode: JavascriptMode.unrestricted,
+      ),
+      // bottomNavigationBar: Navigationbar()
+    );
   }
 }

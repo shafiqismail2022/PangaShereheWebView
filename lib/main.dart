@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pangasherehe/accounts.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'dart:io';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: AccountPage(),
     );
   }
 }
